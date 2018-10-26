@@ -1,0 +1,13 @@
+- name: disable puppet and check
+  hosts: all  
+  become: yes
+  tasks:
+      - name: Enable puppet agent
+        shell: umask 022; puppet agent --disable
+        ignore_errors: yes
+
+      - name: Check file
+        shell: ls -la /var/lib/puppet/state/ | grep 'agent_disabled.lock'
+        register: shell_result
+
+      - debug: msg="{{ shell_result.stdout_lines }}"  

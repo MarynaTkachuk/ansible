@@ -1,0 +1,27 @@
+- name: Creating user
+  become: yes
+  hosts: all
+  vars:
+    user_name: buba
+    user_id: 1040
+    user_primary_group: bu
+    user_primary_group_id: 450
+    user_password: password
+    user_authorized_key: .ssh/id_rsa
+    user_home_dir: /home/{{ user_name }}
+  tasks:
+   - name: Make sure that group exist
+     group:
+       name: '{{ user_primary_group }}'
+       gid: '{{ user_primary_group_id }}'
+       state: present
+   - name: Adding user with specific parameters
+     user:
+       name: '{{ user_name }}'
+       uid: '{{ user_id }}'
+       group: '{{ user_primary_group }}'
+       password: '{{ user_password }}'
+       generate_ssh_key: yes
+       ssh_key_bits: 2048
+       ssh_key_file: '{{ user_authorized_key }}'
+       home: '{{ user_home_dir }}'

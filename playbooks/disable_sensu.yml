@@ -1,0 +1,17 @@
+- name: disable someservice
+  hosts: all
+  vars: 
+    service_name=httpd  
+  tasks:
+      - name: Stop service
+        service:
+          name='{{ service_name }}'
+          state=stopped
+        become: yes
+        ignore_errors: yes  
+
+      - name: Check that stopped
+        shell: ps -ef | grep {{ service_name }} | grep -v "grep"
+        register: shell_result
+        ignore_errors: yes
+      - debug: msg="{{ shell_result.stdout_lines }}"   
