@@ -25,3 +25,14 @@ mv hosts hosts.old && touch hosts
 ```
  ansible all -m ping -u user -k
  ```
+
+* To set up passwordless autorization beetween control host and controlled hosts:
+1. On control machine (under user, which would run playbooks) generate ssh-key with command:
+```
+ssh-keygen
+```
+2. After that playbook **authorized_key.ym** could be used for setting up passwordless autorization with command:
+```
+ansible-playbook authorized_key.yml -e user=someuser -k
+```
+After correct SSH password input and successful run of playbook next run of any playbook for inventory hosts will be without password (-k option). 
