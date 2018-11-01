@@ -13,5 +13,5 @@ ansible --version
 host_key_checking=False
 log_path=/appserver/ansible/logs/ansible.log
 
-* To add hosts to inventory - file hosts could be used. Save default file under hosts.old. After that you could add hosts to newly created emty hosts file.:
+* To add hosts to inventory - file hosts could be used. Save default file under hosts.old. After that you could add hosts to newly created emty hosts file:
 ```mv hosts hosts.old && touch hosts```
