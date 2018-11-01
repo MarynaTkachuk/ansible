@@ -21,3 +21,7 @@ log_path=/appserver/ansible/logs/ansible.log
 ```
 mv hosts hosts.old && touch hosts
 ```
+* After adding hosts to hosts file. Connection could be checked with ansinle ping. User - user used for servers, assuming that all servers had the same `user` user. After that password for this user will be required (assume that all users have the same password):
+```
+ ansible all -m ping -u user -k
+ ```
