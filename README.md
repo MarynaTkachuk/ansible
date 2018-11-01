@@ -7,7 +7,9 @@
 https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
 * Checking path to config file:
+```
 ansible --version
+```
 
 * Before start work uncomment in **ansible.cfg**:
 ```
