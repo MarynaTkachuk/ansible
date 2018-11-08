@@ -36,3 +36,10 @@ ssh-keygen
 ansible-playbook authorized_key.yml -e user=someuser -k
 ```
 After correct SSH password input and successful run of playbook next run of any playbook for inventory hosts will be without password (-k option). 
+
+
+ ## Some usefull commands
+ See all available modules:
+ ```
+ ansible-doc -l
+ ```
