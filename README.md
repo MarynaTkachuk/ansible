@@ -43,6 +43,12 @@ After correct SSH password input and successful run of playbook next run of any 
  ```
  ansible-doc -l
  ```
+ AD-HOC COMMANDS syntax. For running some one-time simple action without playbook:
+ ```
+ ansible host_or_group -m module -a "arguments" [-i inventory_file]
+```
+
+ 
 ## Theory
 For each task Ansible does: 
 1) establishes ssh session
