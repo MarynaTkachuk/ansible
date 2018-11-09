@@ -43,3 +43,14 @@ After correct SSH password input and successful run of playbook next run of any 
  ```
  ansible-doc -l
  ```
+## Theory
+For each task Ansible does: 
+1) establishes ssh session
+2) creates temp folder on remote system 
+3) copies “shell” module file to remote system 
+4) executes python shell.py on remote host 
+5) removes all files it created before 
+6) terminates connection 
+7) ansible processes task’s output and prints it to stdout
+
+You can see this with maximum verbosity mode: -vvv
