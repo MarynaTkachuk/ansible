@@ -52,7 +52,14 @@ With this command we could see all system info, which ansible gather (Gathering 
 ```
 ansible hostname -m setup | more
 ```
- 
+Output "ansible_facts" parameters could be used in playbook.
+
+For example. With next simple playbook - we could see all hosts OS distribution:
+```
+- hosts: all
+  tasks:
+  - debug: var=ansible_distribution
+```
 ## Theory
 For each task Ansible does: 
 1) establishes ssh session
