@@ -47,7 +47,7 @@ After correct SSH password input and successful run of playbook next run of any 
 For each task Ansible does: 
 1) establishes ssh session
 2) creates temp folder on remote system 
-3) copies “shell” module file to remote system 
+3) copies module file to remote system 
 4) executes python shell.py on remote host 
 5) removes all files it created before 
 6) terminates connection 
