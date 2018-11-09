@@ -48,6 +48,10 @@ After correct SSH password input and successful run of playbook next run of any 
  ansible host_or_group -m module -a "arguments" [-i inventory_file]
 ```
 
+With this command we could see all system info, which ansible gather from controlled host in json format:
+```
+ansible CentOs -m setup | more
+```
  
 ## Theory
 For each task Ansible does: 
