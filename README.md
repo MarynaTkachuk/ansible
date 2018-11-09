@@ -48,7 +48,7 @@ After correct SSH password input and successful run of playbook next run of any 
  ansible host_or_group -m module -a "arguments" [-i inventory_file]
 ```
 
-With this command we could see all system info, which ansible gather from controlled host 'hostname' in json format:
+With this command we could see all system info, which ansible gather (Gathering facts) from controlled host 'hostname' in json format:
 ```
 ansible hostname -m setup | more
 ```
